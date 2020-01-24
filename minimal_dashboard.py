@@ -1,6 +1,22 @@
+# ---
+# jupyter:
+#   jupytext:
+#     cell_metadata_filter: -all
+#     formats: ipynb,py
+#     text_representation:
+#       extension: .py
+#       format_name: light
+#       format_version: '1.5'
+#       jupytext_version: 1.3.2
+#   kernelspec:
+#     display_name: Python 3
+#     language: python
+#     name: python3
+# ---
+
 # Encoding with NeuroQuery
 # ========================
-# 
+#
 # The model used here is the same as the one deployed on the neuroquery website
 # ( https://neuroquery.saclay.inria.fr ).
 
@@ -19,17 +35,13 @@ display(query)
 display(button)
 output = widgets.Output()
 
-result = encoder(query)
-plot_img(result["z_map"], threshold=3.1)
+def run_query(_):
+    result = encoder(query.value)
+    with output:
+        display(plot_img(result["z_map"], threshold=3.1))
+        display(result["similar_words"].head(15))
+        display(result["similar_documents"].head())
 
-# (drag the mouse on this interactive plot to see other slices)
+button.on_click(run_query)
 
-# ## Display some relevant terms:
-
-print(result["similar_words"].head(15))
-
-# ## Display some relevant studies:
-
-print("\nsimilar studies:\n")
-print(result["similar_documents"].head())
 
