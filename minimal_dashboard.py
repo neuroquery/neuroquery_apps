@@ -25,7 +25,7 @@
 from neuroquery import fetch_neuroquery_model, NeuroQueryModel
 from nilearn.plotting import plot_img, view_img
 import ipywidgets as widgets
-from IPython.display import display
+from IPython.display import display, display_html
 
 encoder = NeuroQueryModel.from_data_dir(fetch_neuroquery_model())
 
@@ -34,11 +34,13 @@ button = widgets.Button(description="Run query")
 display(query)
 display(button)
 output = widgets.Output()
+display(output)
 
 def run_query(_):
     result = encoder(query.value)
     with output:
-        display(plot_img(result["z_map"], threshold=3.1))
+        output.clear_output()
+        display_html(view_img(result["z_map"], threshold=3.1).get_iframe(), raw=True)
         display(result["similar_words"].head(15))
         display(result["similar_documents"].head())
 
