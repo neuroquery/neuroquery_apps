@@ -31,8 +31,7 @@ encoder = NeuroQueryModel.from_data_dir(fetch_neuroquery_model())
 
 query = widgets.Text(value="brainstem")
 button = widgets.Button(description="Run query")
-display(query)
-display(button)
+display(widgets.HBox([query, button]))
 output = widgets.Output()
 display(output)
 
@@ -46,4 +45,4 @@ def run_query(_):
 
 button.on_click(run_query)
 
-
+run_query(None)
