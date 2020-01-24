@@ -42,7 +42,7 @@ def run_and_display_query(_):
         display_html(view_img(result["z_map"], threshold=3.1).get_iframe(), raw=True)
         sw = result["similar_words"].head(12)
         display(Markdown("## Similar Words"))
-        display(sw)
+        display(sw.style.bar(subset=['weight_in_brain_map', 'weight_in_query'], color='lightgreen'))
         sdocs = result["similar_documents"][['title', 'similarity']].head()
         display(Markdown("## Similar Documents"))
         display(sdocs.style.hide_index().bar(color='lightgreen'))
@@ -50,3 +50,5 @@ def run_and_display_query(_):
 button.on_click(run_and_display_query)
 
 run_and_display_query(None)
+
+
