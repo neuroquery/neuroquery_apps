@@ -11,3 +11,4 @@ matplotlib
 voila
 ipywidgets
 -e git+https://github.com/neuroquery/neuroquery.git#egg=neuroquery
+jupytext
