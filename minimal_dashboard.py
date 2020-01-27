@@ -17,8 +17,8 @@
 # Encoding with NeuroQuery
 # ========================
 #
-# The model used here is the same as the one deployed on the neuroquery website
-# ( https://neuroquery.saclay.inria.fr ).
+# The model used here is the same as the one deployed on the [neuroquery
+# website](https://neuroquery.saclay.inria.fr).
 
 # ## Encode a query into a statistical map of the brain
 
