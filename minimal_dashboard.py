@@ -27,6 +27,7 @@ from nilearn.plotting import plot_img, view_img
 import ipywidgets as widgets
 from IPython.display import display, display_html, Markdown
 
+# %%capture
 encoder = NeuroQueryModel.from_data_dir(fetch_neuroquery_model())
 
 query = widgets.Text(value="brainstem")
