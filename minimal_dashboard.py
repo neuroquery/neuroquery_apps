@@ -18,7 +18,7 @@
 # ========================
 #
 # The model used here is the same as the one deployed on the [neuroquery
-# website](https://neuroquery.saclay.inria.fr).
+# website](https://neuroquery.org).
 
 # ## Encode a query into a statistical map of the brain
 

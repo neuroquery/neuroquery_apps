@@ -14,11 +14,15 @@
 #     name: python3
 # ---
 
-# Encoding with NeuroQuery
-# ========================
+# Encoding with NeuroQuery using an ensemble model
+# ================================================
 #
-# The model used here is the same as the one deployed on the [neuroquery
-# website](https://neuroquery.saclay.inria.fr).
+# The model used here uses the random subspaces bagging method:
+# it consists of 30 NeuroQuery models trained on randomly subsampled
+# vocabularies and averaged.
+# The output maps are predicted densities hence their scale does
+# not have a particular meaning.
+# See also: [the neuroquery website](https://neuroquery.org).
 
 # ## Encode a query into a statistical map of the brain
 
