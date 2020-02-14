@@ -14,13 +14,18 @@
 #     name: python3
 # ---
 
-# Encoding with NeuroQuery
-# ========================
+# Naive decoding with NeuroQuery
+# ==============================
+#
+# Here we show a very simple approach to decoding brain maps:
+# we look for terms that are associated with similar maps by NeuroQuery.
+# This is experimental and results will improve if we introduce a better
+# method in the future.
 #
 # The model used here is the same as the one deployed on the [neuroquery
-# website](https://neuroquery.saclay.inria.fr).
+# website](https://neuroquery.org).
 
-# ## Encode a query into a statistical map of the brain
+# ## Find terms relevant to a brain map
 import tempfile
 import numpy as np
 import pathlib
