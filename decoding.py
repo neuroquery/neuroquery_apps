@@ -54,7 +54,7 @@ if not maps_file.is_file():
 term_maps = np.load(str(maps_file))
 norms = np.linalg.norm(term_maps, axis=1)
 norms[norms == 0] = 1
-term_maps = term_maps / norms[:, None]
+term_maps /= norms[:, None]
 
 uploader = widgets.FileUpload(accept='', multiple=False)
 uploaded_button = widgets.Button(description="Decode")
