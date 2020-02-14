@@ -52,6 +52,9 @@ if not maps_file.is_file():
     print("done")
     del resp
 term_maps = np.load(str(maps_file))
+norms = np.linalg.norm(term_maps, axis=1)
+norms[norms == 0] = 1
+term_maps = term_maps / norms[:, None]
 
 uploader = widgets.FileUpload(accept='', multiple=False)
 uploaded_button = widgets.Button(description="Decode")
@@ -70,6 +73,10 @@ display(output)
 
 def decode(img):
     masked_query = encoder.get_masker().transform(img).ravel()
+    # remove background noise
+    abs_query = np.abs(masked_query)
+    threshold = np.percentile(abs_query, 80)
+    masked_query[abs_query < threshold] = 0
     similarities = np.abs(masked_query).dot(term_maps.T)
     similarities *= np.log(1 + encoder.document_frequencies().values.ravel())
     top_20 = np.argsort(similarities)[::-1][:20]
