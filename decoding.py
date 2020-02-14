@@ -76,8 +76,8 @@ def decode(img):
     # remove background noise
     abs_query = np.abs(masked_query)
     threshold = np.percentile(abs_query, 80)
-    masked_query[abs_query < threshold] = 0
-    similarities = np.abs(masked_query).dot(term_maps.T)
+    abs_query[abs_query < threshold] = 0
+    similarities = abs_query.dot(term_maps.T)
     similarities *= np.log(1 + encoder.document_frequencies().values.ravel())
     top_20 = np.argsort(similarities)[::-1][:20]
     top_terms = voc[top_20].ravel()
