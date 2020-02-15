@@ -10,3 +10,13 @@ These contain, among others:
 - An [ensemble model demo](https://mybinder.org/v2/gh/neuroquery/neuroquery_apps/master?urlpath=%2Fvoila%2Frender%2Fensemble_model_demo.py)
 - A [decoding app](https://mybinder.org/v2/gh/neuroquery/neuroquery_apps/master?urlpath=%2Fvoila%2Frender%2Fdecoding.py)
 - A [game](https://mybinder.org/v2/gh/neuroquery/neuroquery_apps/master?urlpath=%2Fvoila%2Frender%2Fguess_activations.py) in which we have to guess which of two brain activation patterns belongs to a given neuroimaging study, based on its title and abstract.
+
+## Running the applications locally
+
+Some of the apps are a bit too memory and computation intensive for mybinder.
+You may find it easier to run them locally. Just clone this repo, then run:
+
+```
+pip install -r binder/requirements.txt
+voila --VoilaConfiguration.extension_language_mapping='{".py": "python"}'
+```
