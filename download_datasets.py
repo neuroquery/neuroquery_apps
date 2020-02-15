@@ -4,6 +4,7 @@ import requests
 from neuroquery import datasets
 
 datasets.fetch_neuroquery_model()
+datasets.fetch_peak_coordinates()
 datasets.fetch_neuroquery_model(model_name="ensemble_model_2020-02-12")
 maps_url = "https://osf.io/n5avm/download"
 data_dir = datasets.get_neuroquery_data_dir()
