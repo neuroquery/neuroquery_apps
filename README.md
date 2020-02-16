@@ -18,5 +18,6 @@ You may find it easier to run them locally. Just clone this repo, then run:
 
 ```
 pip install -r binder/requirements.txt
+python download_datasets.py
 voila --VoilaConfiguration.extension_language_mapping='{".py": "python"}'
 ```
