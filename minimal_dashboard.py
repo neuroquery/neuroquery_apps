@@ -28,6 +28,8 @@ from nilearn.plotting import plot_img, view_img
 import ipywidgets as widgets
 from IPython.display import display, display_html, Markdown
 
+import utils
+
 # %%capture
 encoder = NeuroQueryModel.from_data_dir(fetch_neuroquery_model())
 
@@ -57,6 +59,9 @@ def run_and_display_query(_):
         display_html(
             get_html_highlighted_text(result["highlighted_text"]), raw=True)
         display_html(view_img(result["brain_map"], threshold=3.1).get_iframe(), raw=True)
+        display_html(
+            utils.download_img_link(result["brain_map"], query.value),
+            raw=True)
         sw = result["similar_words"].head(12).drop("weight_in_query", axis=1)
         display(Markdown("## Similar Words"))
         display(sw.style.bar(subset=['similarity', 'weight_in_brain_map'], color='lightgreen', width=95))

@@ -33,6 +33,8 @@ from nilearn.plotting import plot_img, view_img
 import ipywidgets as widgets
 from IPython.display import display, display_html, Markdown
 
+import utils
+
 EXAMPLE_QUERY = (
     "Theory of mind is the ability to attribute mental states — beliefs, "
     "intents, desires, emotions, knowledge, etc. — to oneself, and to others, "
@@ -59,6 +61,9 @@ def run_and_display_query(_):
         display_html(
             view_img(result["brain_map"], threshold="97%",
                      colorbar=False).get_iframe(),
+            raw=True)
+        display_html(
+            utils.download_img_link(result["brain_map"], query.value),
             raw=True)
 
 
