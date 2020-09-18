@@ -22,6 +22,9 @@
 
 # ## Encode a query into a statistical map of the brain
 
+import os
+from urllib.parse import parse_qs
+
 from neuroquery import fetch_neuroquery_model, NeuroQueryModel
 from neuroquery.tokenization import get_html_highlighted_text
 from nilearn.plotting import plot_img, view_img
@@ -41,7 +44,11 @@ face (self-recognition), is impaired, while other aspects of visual processing
 decision-making) remain intact. (from wikipedia)
 """.replace("\n", " ")
 
-query = widgets.Textarea(value=example_query)
+query_string = os.environ.get('QUERY_STRING', '')
+parameters = parse_qs(query_string)
+query_text=parameters.get('query', [example_query])[0]
+
+query = widgets.Textarea(value=query_text)
 button = widgets.Button(description="Run query")
 display(widgets.HBox([query, button]))
 output = widgets.Output()
