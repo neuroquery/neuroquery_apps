@@ -33,7 +33,6 @@ import ipywidgets as widgets
 from IPython.display import display, display_html
 
 # %%capture
-
 search = NeuroQueryImageSearch()
 
 uploader = widgets.FileUpload(accept="", multiple=False)
