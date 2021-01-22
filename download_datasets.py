@@ -2,7 +2,9 @@ import pathlib
 
 import requests
 from neuroquery import datasets
+from neuroquery_image_search.datasets import fetch_data
 
+fetch_data()
 datasets.fetch_neuroquery_model()
 datasets.fetch_peak_coordinates()
 datasets.fetch_neuroquery_model(model_name="ensemble_model_2020-02-12")
