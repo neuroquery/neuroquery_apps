@@ -11,6 +11,6 @@ matplotlib
 jinja2
 voila >= 0.1.20
 ipywidgets >= 7.5.1
--e git+https://github.com/neuroquery/neuroquery.git#egg=neuroquery
--e git+https://github.com/neuroquery/neuroquery_image_search.git@main#egg=neuroquery_image_search
+neuroquery
+neuroquery_image_search
 jupytext
