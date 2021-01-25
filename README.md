@@ -1,6 +1,6 @@
 # neuroquery_apps
 
-[![Binder](https://notebooks.gesis.org/binder/badge_logo.svg)](https://notebooks.gesis.org/binder/v2/gh/neuroquery/neuroquery_apps/master?urlpath=%2Fvoila%2Frender%2F)
+[![Binder](https://notebooks.gesis.org/binder/badge_logo.svg)](https://notebooks.gesis.org/binder/v2/gh/neuroquery/neuroquery_apps/master?urlpath=%2Fvoila)
 
 A set of small apps implemented as [Voilà dashboards](https://github.com/voila-dashboards/voila). These apps are simpler and less complete than the main NeuroQuery website -- they are meant to prototype new features or demonstrate new models, for instance.
 

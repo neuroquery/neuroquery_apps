@@ -18,13 +18,13 @@
 # ==============================
 #
 
-# ## Find studies relevant to a brain map
+# ## Find studies and terms relevant to a brain map
 import tempfile
 import pathlib
 from nilearn import image
 from nilearn.plotting import view_img
 import requests
-from neuroquery_image_search.searching import (
+from neuroquery_image_search import (
     NeuroQueryImageSearch,
     studies_to_html_table,
     terms_to_html_table,
