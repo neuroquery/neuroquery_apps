@@ -1,5 +1,5 @@
 from neuroquery import datasets
-from neuroquery_image_search.datasets import fetch_data
+from neuroquery_image_search import NeuroQueryImageSearch
 
 datasets.fetch_neuroquery_model()
-fetch_data()
+NeuroQueryImageSearch()
